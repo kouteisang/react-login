@@ -1,0 +1,51 @@
+/* 设置整体背景 */
+.login-page{
+    position: relative;
+    min-width: 100%;
+    height: 100vh;
+    background-image: url('../../asset/images/login-bg.jpg');
+    background-size: cover;
+}
+
+/* 设置悬浮气泡 */
+img:nth-child(1){
+    position: absolute;
+    left: 75rem;
+    top: 0px;
+}
+
+/* 设置悬浮气泡 */
+img:nth-child(2){
+    position: absolute;
+    left: 25rem;
+    top: 13rem;
+}
+
+/* 设置悬浮气泡 */
+img:nth-child(3){
+    position: absolute;
+    left: 20rem;
+    bottom: 2rem
+}
+
+/* 设置悬浮气泡 */
+img:nth-child(4){
+    position: absolute;
+    right: 2rem;
+    bottom: -10rem;
+}
+
+.logo-title{
+    width: 350px;
+    height: 30px;
+    font-size: 18px;
+    color: white;
+    padding-top: 40px;
+    padding-left: 20px;
+}
+
+.login-content{
+    height: 415px;
+    width: 360px;
+    margin: 100px auto;
+}
