@@ -39,3 +39,14 @@ input:focus{
     box-shadow: 0 8px 18px 0 rgba(2, 92, 209, .57);
 }
 
+.register{
+    margin-top: 20px;
+}
+
+.register span{
+    color: #d9e9f9;
+}
+.register span:nth-child(1){
+    margin-left: 20px;
+    margin-right: 200px;
+}

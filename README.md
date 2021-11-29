@@ -11,3 +11,6 @@
 ## React中引入图片
 1. 方式一： import tsIcon from '../images/typescript.jpeg';
 2. 方式二： const tsIcon = require( '../images/typescript.jpeg');
+
+## antd组件库
+1. icon使用 安装npm install --save @ant-design/icons 使用:import {WechatFilled, QqCircleFilled} from '@ant-design/icons'; //引入所需icon

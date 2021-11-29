@@ -5,6 +5,7 @@
     height: 100vh;
     background-image: url('../../asset/images/login-bg.jpg');
     background-size: cover;
+    overflow: hidden;
 }
 
 /* 设置悬浮气泡 */
@@ -47,5 +48,21 @@ img:nth-child(4){
 .login-content{
     height: 415px;
     width: 360px;
-    margin: 100px auto;
+    margin: 50px auto;
+}
+
+.icons{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.iconWechat{
+    color: #ffffff;
+    font-size: 40px;
+    margin-right: 100px;
+}
+
+.iconQQ{
+    color: #fff;
+    font-size: 40px;
 }
