@@ -1,20 +1,81 @@
 import React, { Component } from 'react'
-import {WechatFilled, QqCircleFilled} from '@ant-design/icons'; //引入antd
-import Icon from '@ant-design/icons';
+import {WechatFilled, QqCircleFilled, ArrowRightOutlined} from '@ant-design/icons'; //引入antd
+import { message } from 'antd';
+
 
 import './loginFormPart.css'
 import avator from '../../asset/images/avator.png'
+import { connect } from 'react-redux';
 
 export default class LoginFormPart extends Component {
+
+
+    state = {usernamePlaceholder:'手机号/邮箱', 
+            passwordPlaceHolder:'密码',
+            username:"",
+            password:"",
+            loginSuccess:true,
+            errorInfoVis:false}
+
+
+    changePlaceHolder = (target, value)=>{
+        if(target === 'usernamePlaceholder'){
+            this.setState({usernamePlaceholder:value})
+        }else if(target === 'passwordPlaceHolder'){
+            this.setState({passwordPlaceHolder:value})
+        }
+    }
+
+    inputUsername = (e) => {
+        this.setState({username:e.target.value})
+    }
+
+    inputPassword = (e) => {
+        if(e.keyCode === 13){
+            this.login()
+        }else {
+            this.setState({password:e.target.value})
+        }
+    }
+
+    login = () => {
+        const {username, password} = this.state
+        if(username === '123' && password === '123'){
+            console.log("Login Success")
+            message.success('Login Success')
+            this.setState({loginSuccess:true})
+        }else{
+            this.setState({loginSuccess:false})
+            this.setState({errorInfoVis:true})
+            setTimeout(() => {
+                this.setState({
+                    loginSuccess: true
+                });
+            }, 1000)
+        }
+    }
+
     render() {
+        const {usernamePlaceholder, passwordPlaceHolder, loginSuccess, errorInfoVis} = this.state
         return (
             <div className='loginForm'>
                 <div className="avator"></div>
-                <div className='username-box'>
-                    <input type="text" placeholder='手机号/邮箱'/>
+                <div className={`username-box ${loginSuccess ? '': " loginfailed" }`}>
+                    <input type="text"  
+                        placeholder={usernamePlaceholder} 
+                        onFocus={()=>{this.changePlaceHolder('usernamePlaceholder','')}}
+                        onBlur={()=>{this.changePlaceHolder('usernamePlaceholder','手机号/邮箱')}}
+                        onKeyUp={(e)=>{this.inputUsername(e)}}/>
                 </div>
-                <div className='password-box'>
-                    <input type="password" placeholder='密码'/>
+                <div className={`password-box ${loginSuccess ? '': " loginfailed" }`}>
+                    <input 
+                        type="password"
+                        placeholder={passwordPlaceHolder} 
+                        onFocus={()=>{this.changePlaceHolder('passwordPlaceHolder','')}}
+                        onBlur={()=>{this.changePlaceHolder('passwordPlaceHolder','密码')}}
+                        onKeyUp={(e)=>{this.inputPassword(e)}}/>
+                    <span className={`error-message ${errorInfoVis ? " loginfailed" : " hidden"}`}>用户名或密码错误</span>
+                    <ArrowRightOutlined className='arrayRight' onClick={this.login}/>
                 </div>
                 <div className='register'>
                     <span>立即注册</span>
@@ -28,3 +89,5 @@ export default class LoginFormPart extends Component {
         )
     }
 }
+
+// export default connect()(LoginFormPart)

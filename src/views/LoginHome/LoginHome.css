@@ -40,7 +40,7 @@ img:nth-child(4){
     width: 350px;
     height: 30px;
     font-size: 18px;
-    color: white;
+    color: white !important;
     padding-top: 40px;
     padding-left: 20px;
 }
@@ -57,12 +57,12 @@ img:nth-child(4){
 }
 
 .iconWechat{
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: 40px;
     margin-right: 100px;
 }
 
 .iconQQ{
-    color: #fff;
+    color: #fff  !important;
     font-size: 40px;
 }

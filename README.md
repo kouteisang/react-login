@@ -7,6 +7,8 @@
 4. border:none 取消边框
 5. box-size:border-box width = width + padding
 6. text-align:center 行内元素居中对齐
+7. 动画效果transform:translate(x, y) 平移 使用animation属性
+8. 隐藏样式 visibility:hidden
 
 ## React中引入图片
 1. 方式一： import tsIcon from '../images/typescript.jpeg';
@@ -14,3 +16,8 @@
 
 ## antd组件库
 1. icon使用 安装npm install --save @ant-design/icons 使用:import {WechatFilled, QqCircleFilled} from '@ant-design/icons'; //引入所需icon
+
+
+## js
+1. onFocus:定焦
+2. onBlur:失焦
