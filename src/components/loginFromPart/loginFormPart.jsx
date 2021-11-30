@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import {WechatFilled, QqCircleFilled, ArrowRightOutlined} from '@ant-design/icons'; //引入antd
+import {createLoginAction, createRegisterAction, createResetAction} from '../../redux/action'
 import { message } from 'antd';
-
-
 import './loginFormPart.css'
 import avator from '../../asset/images/avator.png'
 import { connect } from 'react-redux';
 
-export default class LoginFormPart extends Component {
+class LoginFormPart extends Component {
 
 
     state = {usernamePlaceholder:'手机号/邮箱', 
@@ -55,6 +54,15 @@ export default class LoginFormPart extends Component {
         }
     }
 
+    register = ()=>{
+        this.props.createRegisterAction()
+        console.log(this.props.states)
+    }
+
+    forgetPassword = ()=>{
+        this.props.createResetAction()
+    }
+
     render() {
         const {usernamePlaceholder, passwordPlaceHolder, loginSuccess, errorInfoVis} = this.state
         return (
@@ -78,8 +86,8 @@ export default class LoginFormPart extends Component {
                     <ArrowRightOutlined className='arrayRight' onClick={this.login}/>
                 </div>
                 <div className='register'>
-                    <span>立即注册</span>
-                    <span>忘记密码</span>
+                    <span className='re-for' onClick={this.register}>立即注册</span>
+                    <span className='re-for' onClick={this.forgetPassword}>忘记密码</span>
                 </div>
                 <div className='icons'>
                     <WechatFilled className='iconWechat' />
@@ -90,4 +98,11 @@ export default class LoginFormPart extends Component {
     }
 }
 
-// export default connect()(LoginFormPart)
+export default connect(
+    (state)=>{return {states:state.stateChange}},
+    {
+        createLoginAction,
+        createRegisterAction,
+        createResetAction
+    }
+)(LoginFormPart)

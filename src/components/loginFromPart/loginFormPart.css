@@ -90,3 +90,7 @@ input:focus{
 .hidden{
     visibility: hidden;
 }
+
+.re-for{
+    cursor: pointer;
+}

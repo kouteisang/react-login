@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import LoginFormPart from '../../components/loginFromPart/loginFormPart.jsx'
+import { connect } from 'react-redux'
+import {createLoginAction, createRegisterAction, createResetAction} from '../../redux/action'
 import './LoginHome.css'
 import bubble1 from '../../asset/images/login-bg-bubble-01.png'
 import bubble2 from '../../asset/images/login-bg-bubble-02.png'
 import bubble3 from '../../asset/images/login-bg-bubble-03.png'
 import bubble4 from '../../asset/images/login-bg-bubble-04.png'
 
-export default class LoginHome extends Component {
+class LoginHome extends Component {
     render() {
+        console.log(this.props.states)
         return (
             <div className='login-page'>
                 <div className="bg-bubble">
@@ -28,3 +31,13 @@ export default class LoginHome extends Component {
         )
     }
 }
+
+
+export default connect(
+    (state)=>{return {states:state.stateChange}},
+    {
+        createLoginAction,
+        createRegisterAction,
+        createResetAction
+    }
+)(LoginHome)

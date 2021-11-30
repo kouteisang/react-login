@@ -5,5 +5,7 @@ import store from './redux/store'
 import App from './App'
 
 ReactDom.render(
-    <App/>,
+    <Provider store={store}>
+    <App/>
+    </Provider>,
     document.getElementById('root'))
