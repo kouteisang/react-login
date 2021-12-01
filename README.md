@@ -1,4 +1,4 @@
-# 基于React开发的登陆组件 :technologist: :stars:
+# 基于React开发的登录组件 :technologist: :stars:
 
 ## 技术栈: react,redux,antd 
 所有组件以及数据交互均通过redux进行管理          
