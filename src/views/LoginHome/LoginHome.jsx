@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import LoginFormPart from '../../components/loginFromPart/loginFormPart.jsx'
 import RegisterFormPart from '../../components/registerFormPart/registerFormPart.jsx'
 import ResetPasswordPart from '../../components/resetPasswordPart/resetPasswordPart.jsx'
+import RegisterFormPart2 from '../../components/registerFormPart2/registerFormPart2.jsx'
 import {createLoginAction, createRegisterAction, createResetAction} from '../../redux/action'
 import './LoginHome.css'
 import bubble1 from '../../asset/images/login-bg-bubble-01.png'
@@ -19,8 +20,10 @@ class LoginHome extends Component {
             return (<LoginFormPart/>)
         }else if(isRegisterFormShow){
             return (<RegisterFormPart/>)
-        }else{
+        }else if(isResetPasswordShow){
             return (<ResetPasswordPart/>)
+        }else {
+            return <RegisterFormPart2/>
         }
     }
 

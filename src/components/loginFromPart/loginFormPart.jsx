@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import {WechatFilled, QqCircleFilled, ArrowRightOutlined} from '@ant-design/icons'; //引入antd
-import {createLoginAction, createRegisterAction, createResetAction} from '../../redux/action'
+import {createRegisterAction, createResetAction} from '../../redux/action'
 import { message } from 'antd';
 import './loginFormPart.css'
-import avator from '../../asset/images/avator.png'
 import { connect } from 'react-redux';
 
 class LoginFormPart extends Component {
@@ -101,7 +100,6 @@ class LoginFormPart extends Component {
 export default connect(
     (state)=>{return {states:state.stateChange}},
     {
-        createLoginAction,
         createRegisterAction,
         createResetAction
     }

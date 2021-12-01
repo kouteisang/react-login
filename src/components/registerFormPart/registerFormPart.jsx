@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {ArrowLeftOutlined, ArrowRightOutlined} from  '@ant-design/icons';
-import {createLoginAction, createRegisterAction, createResetAction} from '../../redux/action'
+import {createLoginAction, createRegister2Action} from '../../redux/action'
 import './registerFormPart.css'
 class registerFormPart extends Component {
 
@@ -34,7 +34,7 @@ class registerFormPart extends Component {
                 this.setState({errorMsg:false})
             }, 1000)
         } else {
-            this.setState({errorMsg:false})
+            this.props.createRegister2Action(phone)
         }
     }
 
@@ -73,7 +73,6 @@ export default connect(
     (state)=>{return {states:state.stateChange}},
     {
         createLoginAction,
-        createRegisterAction, 
-        createResetAction
+        createRegister2Action
     }
 )(registerFormPart)

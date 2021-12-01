@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {createLoginAction, createRegisterAction, createResetAction} from '../../redux/action'
+import {createLoginAction} from '../../redux/action'
 import {ArrowLeftOutlined} from  '@ant-design/icons';
 
 import './resetPasswordPart.css'
@@ -180,7 +180,5 @@ export default connect(
     (state)=>{return {states:state.stateChange}},
     {
         createLoginAction, 
-        createRegisterAction, 
-        createResetAction
     }
 )(resetPasswordPart)
