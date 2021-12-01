@@ -1,4 +1,16 @@
-# 基于React开发的登陆组件
+# 基于React开发的登陆组件 :technologist: :stars:
+
+## 技术栈: react,redux,antd 
+所有组件以及数据交互均通过redux进行管理          
+icon使用antd组件库
+
+## 运行截图
+![](./src/aeest/images/screenshot/screenshot1.png)
+![](./src/aeest/images/screenshot/screenshot2.png)
+(最近有点忙，等考完试补坑把下图功能写好)
+![](./src/aeest/images/screenshot/screenshot3.png)
+![](./src/aeest/images/screenshot/screenshot4.png)
+
 
 ## Redux
 1. reducer一定要返回新的对象，不要对原来的状态进行修改，这样会导致地址一样，不会触发重新render（血泪教训）
