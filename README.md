@@ -5,11 +5,11 @@
 icon使用antd组件库
 
 ## 运行截图
-![](./src/aeest/images/screenshot/screenshot1.png)
-![](./src/aeest/images/screenshot/screenshot2.png)
+![](./src/asset/images/screenshot/screenshot1.png)
+![](./src/asset/images/screenshot/screenshot2.png)
 (最近有点忙，等考完试补坑把下图功能写好)
-![](./src/aeest/images/screenshot/screenshot3.png)
-![](./src/aeest/images/screenshot/screenshot4.png)
+![](./src/asset/images/screenshot/screenshot3.png)
+![](./src/asset/images/screenshot/screenshot4.png)
 
 
 ## Redux
