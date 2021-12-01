@@ -8,20 +8,11 @@ export default function stateReducer(preState = initState, action){
     const {type} = action
     switch(type){
         case LOGIN_FORM_PART:
-            preState.isLoginFormShow = true
-            preState.isRegisterFormShow = false
-            preState.isResetPasswordShow = false
-            return preState
+            return {...preState, isLoginFormShow:true, isRegisterFormShow:false, isResetPasswordShow:false}
         case REGISTER_FORM_PART:
-            preState.isLoginFormShow = false
-            preState.isRegisterFormShow = true
-            preState.isResetPasswordShow = false
-            return preState
+            return {...preState, isLoginFormShow:false, isRegisterFormShow:true, isResetPasswordShow:false}
         case RESET_PASSWORD_PART:
-            preState.isLoginFormShow = false
-            preState.isRegisterFormShow = false
-            preState.isResetPasswordShow = true
-            return preState
+            return {...preState, isLoginFormShow:false, isRegisterFormShow:false, isResetPasswordShow:true}
         default:
             return preState
     }

@@ -1,0 +1,18 @@
+/* base css */
+
+
+/* error-shake */
+.loginfailed{
+    animation: shake 800ms;
+}
+@keyframes shake {
+    10%, 90% { transform: translate(-1px, 0); }
+    20%, 80% { transform: translate(+2px, 0); }
+    30%, 70% { transform: translate(-4px, 0); }
+    40%, 60% { transform: translate(+4px, 0); }
+    50% { transform: translate(-4px, 0); }
+}
+
+.hidden{
+    visibility: hidden;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import LoginFormPart from '../../components/loginFromPart/loginFormPart.jsx'
 import { connect } from 'react-redux'
+import LoginFormPart from '../../components/loginFromPart/loginFormPart.jsx'
+import RegisterFormPart from '../../components/registerFormPart/registerFormPart.jsx'
 import {createLoginAction, createRegisterAction, createResetAction} from '../../redux/action'
 import './LoginHome.css'
 import bubble1 from '../../asset/images/login-bg-bubble-01.png'
@@ -9,8 +10,19 @@ import bubble3 from '../../asset/images/login-bg-bubble-03.png'
 import bubble4 from '../../asset/images/login-bg-bubble-04.png'
 
 class LoginHome extends Component {
+
+    changePanel = ()=>{
+        const {isLoginFormShow,isRegisterFormShow,isResetPasswordShow} = this.props.states
+        console.log(isRegisterFormShow + '?')
+        if(isLoginFormShow){
+            return (<LoginFormPart/>)
+        }else if(isRegisterFormShow){
+            return (<RegisterFormPart/>)
+        }
+    }
+
+
     render() {
-        console.log(this.props.states)
         return (
             <div className='login-page'>
                 <div className="bg-bubble">
@@ -25,7 +37,10 @@ class LoginHome extends Component {
                 </div>
 
                 <div className="login-content">
-                    <LoginFormPart/>
+                    {/* {
+                         this.changePanel()
+                    } */}
+                    <RegisterFormPart/>
                 </div>
             </div>
         )
