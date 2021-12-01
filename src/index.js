@@ -9,11 +9,3 @@ ReactDom.render(
     <App/>
     </Provider>,
     document.getElementById('root'))
-
-// store.subscribe(()=>{
-//     ReactDom.render(
-//         <Provider store={store}>
-//         <App/>
-//         </Provider>,
-//         document.getElementById('root'))
-// })
